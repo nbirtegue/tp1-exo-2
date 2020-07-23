@@ -15,6 +15,7 @@ x = 0
 let Dir = 1
 led.plot(0, y)
 basic.forever(function () {
+    led.plot(x, y)
     basic.pause(1000)
     led.unplot(x, y)
     y += Dir
@@ -23,5 +24,10 @@ basic.forever(function () {
     } else if (y == 0) {
         Dir = 1
     }
-    led.plot(x, y)
+    if (x == 5) {
+        x = 0
+    }
+    if (x == -1) {
+        x = 4
+    }
 })
